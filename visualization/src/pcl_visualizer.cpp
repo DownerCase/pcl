@@ -598,9 +598,7 @@ pcl::visualization::PCLVisualizer::spinOnce (int time, bool force_redraw)
     const auto stop_time = start_time + std::chrono::milliseconds(time);
     do {
       interactor_->ProcessEvents();
-      const auto sleep_time = 1.0 / interactor_->GetDesiredUpdateRate();
-      std::this_thread::sleep_for(std::chrono::duration<double>(sleep_time));
-      // Exit immeidately via GetDone being true when terminateApp is called
+      // Exit immediately via GetDone being true when terminateApp is called
     } while (std::chrono::steady_clock::now() < stop_time && !interactor_->GetDone());
   }
   else
