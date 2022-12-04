@@ -593,12 +593,15 @@ pcl::visualization::PCLVisualizer::spinOnce (int time, bool force_redraw)
 
 #if VTK_MAJOR_VERSION >= 9 && (VTK_MINOR_VERSION != 0 || VTK_BUILD_VERSION != 0) && (VTK_MINOR_VERSION != 0 || VTK_BUILD_VERSION != 1)
 // All VTK 9 versions, except 9.0.0 and 9.0.1
-  if (interactor_->IsA("vtkXRenderWindowInteractor")) {
+  if (interactor_->IsA("vtkXRenderWindowInteractor") || interactor_->IsA("vtkWin32RenderWindowInteractor")) {
     const auto start_time = std::chrono::steady_clock::now();
     const auto stop_time = start_time + std::chrono::milliseconds(time);
     do {
       interactor_->ProcessEvents();
-    } while (std::chrono::steady_clock::now() < stop_time);
+      const auto sleep_time = 1.0 / interactor_->GetDesiredUpdateRate();
+      std::this_thread::sleep_for(std::chrono::duration<double>(sleep_time));
+      // Exit immeidately via GetDone being true when terminateApp is called
+    } while (std::chrono::steady_clock::now() < stop_time && !interactor_->GetDone());
   }
   else
 #endif

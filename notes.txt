@@ -22,3 +22,10 @@ PCL patched w/ VTK 9.2.2
 
 PCL patched w/ VTK 9.1.0
 - Smooth interaction, works great
+
+Windows:
+PCL patchedV2 w/ VTK 9.2.latest
+- Amazing, quits instantly, nice and smooth
+
+PCL patchedV2 w/ VTK 9.1.0
+- Perfection
