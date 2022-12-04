@@ -349,7 +349,8 @@ if(VTK_FOUND)
     target_link_libraries("${LIB_NAME}" 
                           VTK::IOImage
                           VTK::IOGeometry
-                          VTK::IOPLY)
+                          VTK::IOPLY
+                          VTK::FiltersGeneral)
   else()
     link_directories(${VTK_LINK_DIRECTORIES})
     target_link_libraries("${LIB_NAME}"

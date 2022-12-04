@@ -1,5 +1,5 @@
-#add_executable(demo_vis test.cpp)
-#target_link_libraries(demo_vis pcl_common pcl_io pcl_kdtree pcl_visualization)
+add_executable(demo_vis test.cpp)
+target_link_libraries(demo_vis pcl_common pcl_io pcl_visualization)
 
 # Depends on filters
 #add_executable(test_geometry test_geometry.cpp)
