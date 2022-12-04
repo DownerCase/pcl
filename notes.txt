@@ -1,0 +1,24 @@
+PCL 1.12.1 w/ VTK 9.1.0 (aur)
+- spinOnce crashes
+PCL 1.13-pr w/ VTK 9.1.0 (aur)
+- Doesn't crash but basically impossible to interact with
+PCL 1.13-pr w/ VTK 9.2.2
+- Doesn't crash but basically impossible to interact with
+
+PCL 1.12.1 w/ VTK 9.2.2
+- Works until you stop interacting then dies.
+
+PCL 1.12.1 w/ VTK 9.2.latest
+- Doesn't crash but interacts smoothly and flashes the window
+
+PCL 1.13-pr w/ VTK 9.2.latest
+- Doesn't crash of flash but terrible interaction
+
+PCL patched w/ VTK 9.2.latest
+- Smooth interaction, works great
+
+PCL patched w/ VTK 9.2.2
+- Smooth interaction, works great
+
+PCL patched w/ VTK 9.1.0
+- Smooth interaction, works great
